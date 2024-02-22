@@ -1,0 +1,1 @@
+const half_transparent = 0x000000;
