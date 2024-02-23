@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_utils/ui/pageView/page_view_page.dart';
 
 import '../utils/color_utils.dart';
 import 'provider/page_provider_first.dart';
 
 const provider = "Provider";
-const pageList = [provider];
+const pageView = "PageView";
+const pageList = [provider,pageView];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -20,6 +22,10 @@ class HomePage extends StatelessWidget{
               switch(pageList[index]){
                 case provider:{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageProviderFirst()));
+                  break;
+                }
+                case pageView:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageViewPage()));
                   break;
                 }
               }
