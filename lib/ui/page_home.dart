@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/ui/pageView/page_view_page.dart';
+import 'package:flutter_utils/ui/refresh/page_refresh.dart';
 
 import '../utils/color_utils.dart';
 import 'provider/page_provider_first.dart';
 
 const provider = "Provider";
 const pageView = "PageView";
-const pageList = [provider,pageView];
+const easyRefresh = "EasyRefresh";
+const pageList = [provider,pageView,easyRefresh];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -28,6 +30,10 @@ class HomePage extends StatelessWidget{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageViewPage()));
                   break;
                 }
+                case easyRefresh:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => RefreshPage()));
+                  break;
+                }
               }
             },
             child: Container(
@@ -36,7 +42,7 @@ class HomePage extends StatelessWidget{
               color: Colors.grey,
               child: Text(
                 pageList[index],
-                style: TextStyle(color: Colors.black, fontSize: 24),
+                style: const TextStyle(color: Colors.black, fontSize: 24),
               ),
             ),
           );
