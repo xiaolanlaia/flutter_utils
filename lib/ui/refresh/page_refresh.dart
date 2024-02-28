@@ -19,6 +19,8 @@ class _RefreshPageState extends State<RefreshPage> with AutomaticKeepAliveClient
         title: const Text("RefreshPage"),
       ),
       body: EasyRefresh.builder(
+          header: const ClassicHeader(),
+          footer: const BezierFooter(),
           controller: _refreshController,
           onRefresh: _onRefresh,
           onLoad: _loadRequest,
