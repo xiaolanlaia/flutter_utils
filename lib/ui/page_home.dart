@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/ui/pageView/page_view_page.dart';
 import 'package:flutter_utils/ui/refresh/page_refresh.dart';
-import 'package:flutter_utils/utils/future_utils.dart';
+import 'future/page_future.dart';
 import 'provider/page_provider_first.dart';
 
 const provider = "Provider";
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget{
                   break;
                 }
                 case future:{
-                  FutureUtils().testFuture();
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageFuture()));
                   break;
                 }
               }
