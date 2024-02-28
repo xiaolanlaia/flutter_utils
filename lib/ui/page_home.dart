@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/ui/pageView/page_view_page.dart';
 import 'package:flutter_utils/ui/refresh/page_refresh.dart';
+import 'package:flutter_utils/ui/webview/page_webview.dart';
 import 'future/page_future.dart';
 import 'provider/page_provider_first.dart';
 
@@ -8,7 +9,8 @@ const provider = "Provider";
 const pageView = "PageView";
 const easyRefresh = "EasyRefresh";
 const future = "Future";
-const pageList = [provider,pageView,easyRefresh,future];
+const webView = "WebView";
+const pageList = [provider,pageView,easyRefresh,future,webView];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -36,6 +38,10 @@ class HomePage extends StatelessWidget{
                 }
                 case future:{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageFuture()));
+                  break;
+                }
+                case webView:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageWebView()));
                   break;
                 }
               }
