@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../utils/future_utils.dart';
 
@@ -10,6 +9,8 @@ import '../../utils/future_utils.dart';
 /// 
 
 class PageFuture extends StatefulWidget {
+  const PageFuture({super.key});
+
 
   @override
   State<StatefulWidget> createState() => _PageFuture();

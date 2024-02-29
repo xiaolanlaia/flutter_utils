@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../../provider/CounterModel.dart';
 
 class PageProviderSecond extends StatelessWidget {
+  const PageProviderSecond({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

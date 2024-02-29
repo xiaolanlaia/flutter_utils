@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 /// 页面详情
 class PageDetails extends StatefulWidget {
-  PageDetails({Key? key, required this.title}) : super(key: key);
+  const PageDetails({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  _PageDetailsState createState() => _PageDetailsState();
+  State<StatefulWidget> createState() => _PageDetailsState();
 }
 
 class _PageDetailsState extends State<PageDetails> with AutomaticKeepAliveClientMixin  {

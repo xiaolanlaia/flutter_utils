@@ -2,6 +2,8 @@ import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 
 class RefreshPage extends StatefulWidget{
+  const RefreshPage({super.key});
+
   @override
   State<StatefulWidget> createState() => _RefreshPageState();
 

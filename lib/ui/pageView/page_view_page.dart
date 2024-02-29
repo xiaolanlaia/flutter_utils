@@ -6,7 +6,7 @@ class PageViewPage extends StatefulWidget {
   const PageViewPage({Key? key}) : super(key: key);
 
   @override
-  _PageViewPageState createState() => _PageViewPageState();
+  State<StatefulWidget> createState() => _PageViewPageState();
 }
 
 class _PageViewPageState extends State<PageViewPage> {

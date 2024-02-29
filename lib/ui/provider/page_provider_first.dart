@@ -6,6 +6,8 @@ import '../../provider/CounterModel.dart';
 import 'page_provider_goods.dart';
 
 class PageProviderFirst extends StatelessWidget {
+  const PageProviderFirst({super.key});
+
   @override
   Widget build(BuildContext context) {
     final _counter = Provider.of<CounterModel>(context);

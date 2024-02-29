@@ -8,6 +8,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 /// 
 
 class PageWebView extends StatefulWidget{
+  const PageWebView({super.key});
+
   @override
   State<StatefulWidget> createState() => _PageWebView();
 

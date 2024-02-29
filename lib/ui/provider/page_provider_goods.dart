@@ -5,6 +5,8 @@ import '../../bean/goods_entity.dart';
 import '../../provider/GoodsListProvider.dart';
 
 class PageProviderGoodsList extends StatelessWidget {
+  const PageProviderGoodsList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
