@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/provider/CounterModel.dart';
 import 'package:flutter_utils/ui/page_home.dart';
+import 'package:flutter_utils/utils/screen_adapter.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Adapt.initialize(context);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
