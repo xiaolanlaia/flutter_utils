@@ -3,6 +3,7 @@ import 'package:flutter_utils/ui/pageView/page_view_page.dart';
 import 'package:flutter_utils/ui/refresh/page_refresh.dart';
 import 'package:flutter_utils/ui/tabbar/page_tabbar.dart';
 import 'package:flutter_utils/ui/webview/page_webview.dart';
+import 'assets/page_assets.dart';
 import 'future/page_future.dart';
 import 'provider/page_provider_first.dart';
 
@@ -12,7 +13,8 @@ const easyRefresh = "EasyRefresh";
 const future = "Future";
 const webView = "WebView";
 const pageTabBar = "PageTabBar";
-const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar];
+const assets = "Assets";
+const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar,assets];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -48,6 +50,10 @@ class HomePage extends StatelessWidget{
                 }
                 case pageTabBar:{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageTabBar()));
+                  break;
+                }
+                case assets:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageAssets()));
                   break;
                 }
               }
