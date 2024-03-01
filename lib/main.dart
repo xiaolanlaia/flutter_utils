@@ -7,6 +7,13 @@ import 'package:provider/provider.dart';
 void main() {
   final counter = CounterModel();
   final textSize = 48;
+  // 这种模式不现实状态栏
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  // 这种模式显示状态栏
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  // 修改状态栏颜色(只能黑和白)
+  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
   runApp(
     Provider<int>.value(
       //声明数据，能够提供给子组件使用
