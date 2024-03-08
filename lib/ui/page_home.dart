@@ -4,6 +4,7 @@ import 'package:flutter_utils/ui/refresh/page_refresh.dart';
 import 'package:flutter_utils/ui/tabbar/page_tabbar.dart';
 import 'package:flutter_utils/ui/webview/page_webview.dart';
 import 'assets/page_assets.dart';
+import 'communicate/page_message_channel.dart';
 import 'future/page_future.dart';
 import 'provider/page_provider_first.dart';
 
@@ -14,7 +15,8 @@ const future = "Future";
 const webView = "WebView";
 const pageTabBar = "PageTabBar";
 const assets = "Assets";
-const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar,assets];
+const messageChannel = "MessageChannel";
+const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar,assets,messageChannel];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -54,6 +56,10 @@ class HomePage extends StatelessWidget{
                 }
                 case assets:{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageAssets()));
+                  break;
+                }
+                case messageChannel:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageMessageChannel()));
                   break;
                 }
               }
