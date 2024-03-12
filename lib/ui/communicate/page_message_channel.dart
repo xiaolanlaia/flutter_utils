@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_utils/utils/log_utils.dart';
 
+import '../../bean/goods_entity.dart';
 import '../../utils/res_colors.dart';
 import '../../utils/screen_adapter.dart';
 
@@ -62,9 +65,12 @@ class _PageMessageChannelState extends State<PageMessageChannel>{
           /// MethodChannel
           InkWell(
             onTap: () async {
-              /// 给原生发消息并获得返回值
-              String returnValue = await methodChannel.invokeMethod("张三");
+              /// 调用名为androidMethod的原生方法并获得返回值
+              String returnValue = await methodChannel.invokeMethod("androidMethod");
               LogUtils.d("__MethodChannel 从原生Android的java方法返回的值是："+returnValue);
+
+              GoodsEntity mGoodsEntity = GoodsEntity.fromJson(jsonDecode(returnValue));
+              LogUtils.d("__MethodChannel isCollection:${mGoodsEntity.isCollection} goodsName:${mGoodsEntity.goodsName}");
             },
             child: Container(
               color: color_dddddd,

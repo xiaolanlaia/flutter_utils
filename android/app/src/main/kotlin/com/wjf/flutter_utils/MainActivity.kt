@@ -52,17 +52,19 @@ class MainActivity: FlutterActivity() {
     private fun setMethodChannel(){
         MethodChannel(flutterEngine!!.dartExecutor.binaryMessenger, "MethodChannel").setMethodCallHandler { methodCall, result ->
             if (methodCall.method != null) {
-                //得到Flutter的传值并向Flutter返回值
-                result.success(toFlutter(methodCall.method))
+                //方法被Flutter调用
+                if (methodCall.method.equals("androidMethod")){
+                    //给Flutter返回值
+                    result.success(toFlutter())
+                }
             } else {
                 result.notImplemented()
             }
         }
     }
 
-    private fun toFlutter(name: String): String {
-        println("__MethodChannel 传递的参数是$name")
-        return "您好$name"
+    private fun toFlutter(): String {
+        return GoodsEntity(true,"GoodsEntity").toString()
     }
 
 
