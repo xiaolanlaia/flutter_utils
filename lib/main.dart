@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/provider/CounterModel.dart';
 import 'package:flutter_utils/ui/page_home.dart';
+import 'package:flutter_utils/utils/constant.dart';
 import 'package:flutter_utils/utils/screen_adapter.dart';
 import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
+
 
 void main() {
   final counter = CounterModel();
@@ -13,6 +16,9 @@ void main() {
   // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // 修改状态栏颜色(只能黑和白)
   // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
+
+  setPathUrlStrategy();
 
   runApp(
     Provider<int>.value(

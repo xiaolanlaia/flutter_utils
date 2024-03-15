@@ -6,17 +6,19 @@ import 'package:flutter_utils/ui/webview/page_webview.dart';
 import 'assets/page_assets.dart';
 import 'communicate/page_message_channel.dart';
 import 'future/page_future.dart';
+import 'net/page_net.dart';
 import 'provider/page_provider_first.dart';
 
-const provider = "Provider";
-const pageView = "PageView";
-const easyRefresh = "EasyRefresh";
-const future = "Future";
-const webView = "WebView";
-const pageTabBar = "PageTabBar";
-const assets = "Assets";
-const messageChannel = "MessageChannel";
-const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar,assets,messageChannel];
+const provider        = "Provider";
+const pageView        = "PageView";
+const easyRefresh     = "EasyRefresh";
+const future          = "Future";
+const webView         = "WebView";
+const pageTabBar      = "PageTabBar";
+const assets          = "Assets";
+const messageChannel  = "MessageChannel";
+const netPage         = "NetPage";
+const pageList = [provider,pageView,easyRefresh,future,webView,pageTabBar,assets,messageChannel,netPage];
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -60,6 +62,10 @@ class HomePage extends StatelessWidget{
                 }
                 case messageChannel:{
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageMessageChannel()));
+                  break;
+                }
+                case netPage:{
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => NetPage()));
                   break;
                 }
               }
