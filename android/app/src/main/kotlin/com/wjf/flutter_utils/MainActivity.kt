@@ -2,8 +2,10 @@ package com.wjf.flutter_utils
 
 import android.os.Bundle
 import android.os.Handler
+import com.wjf.flutter_utils.flutterView.MyPlugin
 import io.flutter.Log
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.BasicMessageChannel
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
@@ -65,6 +67,13 @@ class MainActivity: FlutterActivity() {
 
     private fun toFlutter(): String {
         return GoodsEntity(true,"GoodsEntity").toString()
+    }
+
+
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+        flutterEngine.plugins.add(MyPlugin())
+
     }
 
 
